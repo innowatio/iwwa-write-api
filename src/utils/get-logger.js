@@ -10,14 +10,14 @@ export default function getLogger (name) {
             {
                 stream: process.stdout
             },
-            {
+            config.NODE_ENV === "production" ? {
                 stream: createCloudWatchStream({
                     logGroupName: config.AWS_CLOUDWATCH_GROUP,
                     logStreamName: config.AWS_CLOUDWATCH_STREAM,
                     region: config.AWS_CLOUDWATCH_REGION
                 }),
                 type: "raw"
-            }
-        ]
+            } : null
+        ].filter(i => !!i)
     });
 }
