@@ -11,6 +11,7 @@ export default function authenticate () {
             req.user = await db.collection("users").findOne({
                 "services.resume.loginTokens.hashedToken": hashToken(req.token)
             });
+            req.userId = req.user._id;
             delete req.token;
             next();
         });

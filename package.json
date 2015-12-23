@@ -1,16 +1,18 @@
 {
   "name": "iwwa-write-api",
-  "version": "1.0.5",
-  "description": "Deploy static web-apps on AWS",
-  "main": "lib/index.js",
+  "version": "1.0.0",
+  "description": "Iwwa platform write API",
+  "main": "lib/server.js",
   "scripts": {
     "build": "babel src --out-dir lib",
     "clean": "rimraf lib coverage",
-    "coverage": "NODE_ENV=test babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --recursive",
-    "coveralls": "cat coverage/lcov.info | coveralls",
+    "write-commit": "git rev-parse --short HEAD > COMMIT",
+    "coverage": "NODE_ENV=test NODE_PATH=src babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --recursive",
+    "codecov": "cat coverage/lcov.info | codecov",
     "dev": "npm test -- --watch",
     "lint": "eslint src test",
-    "prepublish": "npm run build",
+    "prestart": "npm run write-commit && npm run build",
+    "start": "node lib/server.js",
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register --require babel-polyfill --recursive"
   },
   "author": "Team Wattellina <wattellina@mondora.com>",
@@ -39,16 +41,14 @@
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
-    "ajv": "^2.4.0",
     "aws-sdk": "^2.2.21",
     "bluebird": "^3.0.6",
     "body-parser": "^1.14.1",
     "bunyan": "^1.5.1",
     "bunyan-request": "^1.2.0",
-    "crypto": "0.0.3",
     "express": "^4.13.3",
     "express-bearer-token": "^2.1.0",
-    "express-jsonschema": "^1.1.0",
+    "lk-collection-express": "^1.1.0",
     "lodash.merge": "^3.3.2",
     "mongodb": "^2.0.52",
     "node-uuid": "^1.4.7"
