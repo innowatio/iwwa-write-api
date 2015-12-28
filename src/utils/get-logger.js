@@ -1,7 +1,7 @@
 import bunyan from "bunyan";
 import createCloudWatchStream from "bunyan-cloudwatch";
 
-import * as config from "../config";
+import * as config from "config";
 
 export default function getLogger (name) {
     return bunyan.createLogger({

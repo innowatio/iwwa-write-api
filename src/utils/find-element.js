@@ -1,4 +1,4 @@
-import mongodb from "../services/mongodb";
+import mongodb from "services/mongodb";
 
 export default async function findElement (collection, _id) {
     const db = await mongodb;

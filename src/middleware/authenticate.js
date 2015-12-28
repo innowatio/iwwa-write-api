@@ -1,18 +1,39 @@
-import bearerToken from "express-bearer-token";
+import jwt from "express-jwt";
 
-import mongodb from "../services/mongodb";
-import hashToken from "../utils/hash-token";
+import * as config from "config";
+import mongodb from "services/mongodb";
+
+async function getUserFromToken (token) {
+    const db = await mongodb;
+    return db.collection("users").findOne({
+        _id: token.sub
+    });
+}
 
 export default function authenticate () {
-    const bearerTokenMiddleware = bearerToken();
+    const jwtMiddleware = jwt({secret: config.JWT_SECRET});
     return (req, res, next) => {
-        bearerTokenMiddleware(req, res, async () => {
-            const db = await mongodb;
-            req.user = await db.collection("users").findOne({
-                "services.resume.loginTokens.hashedToken": hashToken(req.token)
-            });
-            req.userId = req.user._id;
-            delete req.token;
+        jwtMiddleware(req, res, async (err) => {
+            if (err) {
+                return res.status(401).send({
+                    message: err.message
+                });
+            }
+            /*
+            *   On successful verification of the jwt token, the jwt middleware
+            *   decorates the request assigning the token payload to the `user`
+            *   property of the request. We overwrite this behaviour assigning
+            *   to the `user` property the user object retrieved from the
+            *   database.
+            */
+            const user = await getUserFromToken(req.user);
+            if (!user) {
+                return res.status(401).send({
+                    message: "Token has no corresponding user"
+                });
+            }
+            req.user = user;
+            req.userId = user._id;
             next();
         });
     };

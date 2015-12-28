@@ -1,5 +1,5 @@
 import {MongoClient} from "mongodb";
 
-import {MONGODB_URL} from "../config";
+import * as config from "config";
 
-export default MongoClient.connect(MONGODB_URL);
+export default MongoClient.connect(config.MONGODB_URL);
