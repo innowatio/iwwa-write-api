@@ -24,3 +24,4 @@ export const JWT_SECRET = new Buffer(
     process.env.JWT_SECRET || new Buffer("JWT_SECRET").toString("base64"),
     "base64"
 );
+export const JWT_ISSUER = "iwwa-write-api";

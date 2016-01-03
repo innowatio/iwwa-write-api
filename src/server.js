@@ -3,9 +3,7 @@ import express from "express";
 
 import api from "api";
 import * as config from "config";
-import getLogger from "utils/get-logger";
-
-const log = getLogger("iwwa-write-api");
+import log from "common/logger";
 
 express()
     .use(bunyanRequest({

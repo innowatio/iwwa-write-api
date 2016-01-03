@@ -1,7 +1,8 @@
 import convexpress from "convexpress";
 
 import * as config from "config";
-import authenticate from "middleware/authenticate";
+import {authenticateMiddleware, usersConvroutes} from "api/users";
+import sensorsConvroutes from "api/sensors";
 
 const options = {
     info: {
@@ -12,6 +13,13 @@ const options = {
 };
 export default convexpress(options)
     .serveSwagger()
-    .convroute(require("api/login/post"))
-    .use(authenticate());
-    // .convroute(require("api/apps/:id/stages/:name/config/put"));
+    .convroute(usersConvroutes.login)
+    .use(authenticateMiddleware)
+    .convroute(usersConvroutes.createUser)
+    .convroute(usersConvroutes.removeUser)
+    .convroute(usersConvroutes.addRole)
+    .convroute(usersConvroutes.removeRole)
+    .convroute(usersConvroutes.replaceProfile)
+    .convroute(sensorsConvroutes.insert)
+    .convroute(sensorsConvroutes.replace)
+    .convroute(sensorsConvroutes.remove);
