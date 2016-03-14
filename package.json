@@ -11,7 +11,7 @@
     "codecov": "codecov",
     "lint": "eslint src test",
     "prestart": "npm run build",
-    "start": "NODE_PATH=src node lib/server.js",
+    "start": "NODE_PATH=lib node lib/server.js",
     "test": "NODE_ENV=test NODE_PATH=src mocha --compilers js:babel-core/register --require babel-polyfill --recursive",
     "dev:start": "NODE_PATH=src nodemon --ignore test/ --exec node_modules/.bin/babel-node src/server.js | bunyan",
     "dev:test": "npm test -- --watch",
@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.2.21",
+    "babel-polyfill": "^6.7.2",
     "bcryptjs": "^2.3.0",
     "bluebird": "^3.0.6",
     "bunyan": "^1.5.1",
