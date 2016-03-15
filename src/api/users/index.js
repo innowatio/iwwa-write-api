@@ -1,7 +1,7 @@
 import {getConvroutes, getAuthenticateMiddleware} from "lk-users-convexpress";
 
-import dispatchEvent from "common/dispatch-event";
 import * as config from "config";
+import dispatchEvent from "services/dispatcher";
 import {findUserByEmail, findUserById, getUserId} from "./utils";
 
 const usersOptions = {

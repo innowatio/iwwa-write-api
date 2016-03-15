@@ -1,7 +1,7 @@
 import collection from "lk-collection-convexpress";
 
-import dispatchEvent from "common/dispatch-event";
 import findElement from "common/find-element";
+import dispatchEvent from "services/dispatcher";
 import * as authorize from "./authorize";
 import schema from "./schema";
 

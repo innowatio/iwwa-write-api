@@ -1,7 +1,7 @@
 import convexpress from "convexpress";
 
 import * as config from "config";
-import {authenticateMiddleware, usersConvroutes} from "api/users";
+import {usersConvroutes} from "api/users";
 import sensorsConvroutes from "api/sensors";
 
 const options = {
@@ -14,7 +14,6 @@ const options = {
 export default convexpress(options)
     .serveSwagger()
     .convroute(usersConvroutes.login)
-    .use(authenticateMiddleware)
     .convroute(usersConvroutes.createUser)
     .convroute(usersConvroutes.removeUser)
     .convroute(usersConvroutes.addRole)
