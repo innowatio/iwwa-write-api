@@ -14,7 +14,7 @@ export const MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost:27017
 
 export const KINESIS_REGION = process.env.KINESIS_REGION || "us-west-1";
 export const KINESIS_ENDPOINT = (
-    NODE_ENV === "production" ?
+    NODE_ENV !== "development" ?
     `https://kinesis.${KINESIS_REGION}.amazonaws.com` :
     "http://localhost:4567"
 );

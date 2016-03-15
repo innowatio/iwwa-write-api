@@ -10,7 +10,7 @@
     "coverage": "NODE_ENV=test NODE_PATH=src babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --recursive --require babel-polyfill",
     "codecov": "codecov",
     "lint": "eslint src test",
-    "prestart": "npm i --only=dev && npm run build",
+    "prestart": "npm run build",
     "start": "NODE_PATH=lib node lib/server.js",
     "test": "NODE_ENV=test NODE_PATH=src mocha --compilers js:babel-core/register --require babel-polyfill --recursive",
     "dev:start": "NODE_PATH=src nodemon --ignore test/ --exec node_modules/.bin/babel-node src/server.js | bunyan",
