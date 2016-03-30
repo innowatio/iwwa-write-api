@@ -65,6 +65,7 @@
     "lk-dispatch": "^1.0.1",
     "lk-users-convexpress": "^1.0.2",
     "mongodb": "^2.0.52",
-    "node-uuid": "^1.4.7"
+    "node-uuid": "^1.4.7",
+    "ramda": "^0.20.0"
   }
 }
