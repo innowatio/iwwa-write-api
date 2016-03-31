@@ -4,7 +4,7 @@ import {expect} from "chai";
 import mongodb from "services/mongodb";
 import {siteMock, sensorsIds} from "../../mocks";
 
-import {insert, replace, remove} from "api/sites/authorize";
+import {insert} from "api/sites/authorize";
 
 describe("sites operation", () => {
 
@@ -32,26 +32,23 @@ describe("sites operation", () => {
         await db.collection("sensors").remove({});
     });
 
+    describe("INSERT ", () => {
+        describe("is authorized if ", () => {
+            it("all children sensors ids are on DB", async () => {
+                db.collection("sensors").insert({
+                    _id: sensorsIds[0],
+                    name: "sensor" + sensorsIds[0]
+                });
 
-    describe("is authorized if ", () => {
-        it("all children sensors ids are on DB", async () => {
-            db.collection("sensors").insert({
-                _id: sensorsIds[0],
-                name: "sensor" + sensorsIds[0]
+                expect({authorized: true}).to.deep.equal(await insert({}, siteMock));
             });
-
-            expect({authorized: true}).to.deep.equal(await insert({}, siteMock));
-            expect({authorized: true}).to.deep.equal(await replace({}, siteMock));
-            expect({authorized: true}).to.deep.equal(await remove({}, siteMock));
         });
-    });
 
-    describe("is not authorized if ", () => {
-        it("not all children sensors ids are on DB", async () => {
+        describe("is not authorized if ", () => {
+            it("not all children sensors ids are on DB", async () => {
 
-            expect({authorized: false}).to.deep.equal(await insert({}, siteMock));
-            expect({authorized: false}).to.deep.equal(await replace({}, siteMock));
-            expect({authorized: false}).to.deep.equal(await remove({}, siteMock));
+                expect({authorized: false}).to.deep.equal(await insert({}, siteMock));
+            });
         });
     });
 });

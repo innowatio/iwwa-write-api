@@ -6,15 +6,15 @@ export async function insert (user, body) {
     };
 }
 
-export async function replace (user, body) {
+export async function replace () {
     return {
-        authorized: await checkSensorIds(body)
+        authorized: true
     };
 }
 
-export async function remove (user, body) {
+export async function remove () {
     return {
-        authorized: await checkSensorIds(body)
+        authorized: true
     };
 }
 
