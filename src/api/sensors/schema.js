@@ -23,6 +23,13 @@ export default {
         "formula": {
             "type": "string"
         },
+        "tags": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "string"
+            }
+        },
         "siteId": {
             "type": "string"
         },
