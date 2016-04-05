@@ -4,3 +4,4 @@ lib/
 coverage/
 .env
 kinesis-db/
+.idea
