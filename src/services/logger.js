@@ -9,7 +9,7 @@ export default bunyan.createLogger({
         {
             stream: process.stdout
         },
-        config.NODE_ENV === "production" ? {
+        config.NODE_ENV !== "development" ? {
             stream: createCloudWatchStream({
                 logGroupName: config.AWS_CLOUDWATCH_GROUP,
                 logStreamName: config.AWS_CLOUDWATCH_STREAM,

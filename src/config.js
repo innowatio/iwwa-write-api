@@ -10,11 +10,11 @@ export const AWS_CLOUDWATCH_GROUP = "iwwa-write-api";
 export const AWS_CLOUDWATCH_STREAM = SERVER_ID;
 export const AWS_CLOUDWATCH_REGION = process.env.AWS_CLOUDWATCH_REGION;
 
-export const MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost:27017/iwwa-write-api";
+export const MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost:27017/test";
 
 export const KINESIS_REGION = process.env.KINESIS_REGION || "us-west-1";
 export const KINESIS_ENDPOINT = (
-    NODE_ENV === "production" ?
+    NODE_ENV !== "development" ?
     `https://kinesis.${KINESIS_REGION}.amazonaws.com` :
     "http://localhost:4567"
 );

@@ -3,7 +3,7 @@ import {promisifyAll} from "bluebird";
 
 import * as config from "config";
 
-if (config.NODE_ENV !== "production") {
+if (config.NODE_ENV === "development") {
     AWS.config.update({
         accessKeyId: "accessKeyId",
         secretAccessKey: "secretAccessKey"

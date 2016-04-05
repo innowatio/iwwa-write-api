@@ -3,7 +3,7 @@ import express from "express";
 
 import api from "api";
 import * as config from "config";
-import log from "common/logger";
+import log from "services/logger";
 
 express()
     .use(bunyanRequest({

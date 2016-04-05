@@ -5,10 +5,16 @@ export default {
         "id": {
             "type": "string"
         },
+        "name": {
+            "type": "string"
+        },
         "type": {
             "type": "string"
         },
         "description": {
+            "type": "string"
+        },
+        "unitOfMeasurement": {
             "type": "string"
         },
         "virtual": {
@@ -16,10 +22,18 @@ export default {
         },
         "formula": {
             "type": "string"
+        },
+        "siteId": {
+            "type": "string"
+        },
+        "userId": {
+            "type": "string"
         }
     },
+    "additionalProperties": false,
     "required": [
         "id",
+        "name",
         "type"
     ]
 };

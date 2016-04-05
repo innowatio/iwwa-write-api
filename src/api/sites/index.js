@@ -6,7 +6,7 @@ import * as authorize from "./authorize";
 import schema from "./schema";
 
 export default collection({
-    name: "sensors",
+    name: "sites",
     dispatchEvent,
     authorize,
     schema,
