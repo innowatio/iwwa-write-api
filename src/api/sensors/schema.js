@@ -16,7 +16,7 @@ export default {
         },
         "measurementsDeltaInMs": {
             "type": "integer",
-            "minimumu": 10000
+            "minimum": 10000
         },
         "unitOfMeasurement": {
             "type": "string"
