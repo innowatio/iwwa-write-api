@@ -14,7 +14,7 @@ export default {
         "description": {
             "type": "string"
         },
-        "measurementsDeltaInMs": {
+        "sampleDeltaInMS": {
             "type": "integer",
             "minimum": 10000
         },
