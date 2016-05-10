@@ -35,6 +35,9 @@ export default {
         },
         "userId": {
             "type": "string"
+        },
+        "parentSensorId": {
+            "type": "string"
         }
     },
     "additionalProperties": false,
