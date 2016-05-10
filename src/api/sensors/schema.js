@@ -14,6 +14,10 @@ export default {
         "description": {
             "type": "string"
         },
+        "sampleDeltaInMS": {
+            "type": "integer",
+            "minimum": 10000
+        },
         "unitOfMeasurement": {
             "type": "string"
         },
