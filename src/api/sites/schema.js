@@ -26,7 +26,7 @@ export default {
         "name": {
             "type": "string"
         },
-        "children": {
+        "sensors": {
             "$ref": "#/definitions/children"
         }
     },
