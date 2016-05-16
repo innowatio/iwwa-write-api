@@ -26,6 +26,12 @@ export default {
         "name": {
             "type": "string"
         },
+        "description": {
+            "type": "string"
+        },
+        "shortDescription": {
+            "type": "string"
+        },
         "sensors": {
             "$ref": "#/definitions/children"
         }
