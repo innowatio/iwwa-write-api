@@ -1,5 +1,24 @@
 export default {
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "formula": {
+            "type": "object",
+            "properties": {
+                "formula": {
+                    "type": "string"
+                },
+                "start": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "end": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "required": ["formula", "start", "end"]
+        }
+    },
     "type": "object",
     "properties": {
         "id": {
@@ -27,8 +46,11 @@ export default {
         "virtual": {
             "type": "boolean"
         },
-        "formula": {
-            "type": "string"
+        "formulas": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/formula"
+            }
         },
         "tags": {
             "type": "array",
