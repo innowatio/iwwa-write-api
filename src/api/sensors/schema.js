@@ -14,9 +14,23 @@ export default {
                 "end": {
                     "type": "string",
                     "format": "date-time"
+                },
+                "variables": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "measurementType": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
                 }
             },
-            "required": ["formula", "start", "end"]
+            "required": ["formula", "start", "end", "variables", "measurementType"]
         }
     },
     "type": "object",
