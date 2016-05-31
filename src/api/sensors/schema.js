@@ -1,5 +1,38 @@
 export default {
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "formula": {
+            "type": "object",
+            "properties": {
+                "formula": {
+                    "type": "string"
+                },
+                "start": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "end": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "variables": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "measurementType": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": ["formula", "start", "end", "variables", "measurementType"]
+        }
+    },
     "type": "object",
     "properties": {
         "id": {
@@ -14,6 +47,9 @@ export default {
         "description": {
             "type": "string"
         },
+        "shortDescription": {
+            "type": "string"
+        },
         "sampleDeltaInMS": {
             "type": "integer",
             "minimum": 10000
@@ -24,8 +60,11 @@ export default {
         "virtual": {
             "type": "boolean"
         },
-        "formula": {
-            "type": "string"
+        "formulas": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/formula"
+            }
         },
         "tags": {
             "type": "array",
@@ -38,6 +77,9 @@ export default {
             "type": "string"
         },
         "userId": {
+            "type": "string"
+        },
+        "parentSensorId": {
             "type": "string"
         }
     },
