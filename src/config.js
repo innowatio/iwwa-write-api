@@ -25,3 +25,8 @@ export const JWT_SECRET = new Buffer(
     "base64"
 );
 export const JWT_ISSUER = "iwwa-write-api";
+
+
+// ACTIONS
+
+export const ACTION_INSERT_READING = "element inserted in collection readings";
