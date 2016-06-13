@@ -4,6 +4,7 @@ import * as config from "config";
 import {usersConvroutes} from "api/users";
 import sensorsConvroutes from "api/sensors";
 import sitesConvroutes from "api/sites";
+import aggregatedReadingsConvroutes from "api/aggregated-readings";
 
 const options = {
     info: {
@@ -28,4 +29,6 @@ export default convexpress(options)
     //  Sites
     .convroute(sitesConvroutes.insert)
     .convroute(sitesConvroutes.replace)
-    .convroute(sitesConvroutes.remove);
+    .convroute(sitesConvroutes.remove)
+    //  Aggregated readings
+    .convroute(aggregatedReadingsConvroutes.insert);
