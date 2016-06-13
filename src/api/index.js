@@ -5,6 +5,7 @@ import {usersConvroutes} from "api/users";
 import sensorsConvroutes from "api/sensors";
 import sitesConvroutes from "api/sites";
 import aggregatedReadingsConvroutes from "api/aggregated-readings";
+import favChartsConvroutes from "api/favorite-charts";
 
 const options = {
     info: {
@@ -31,4 +32,6 @@ export default convexpress(options)
     .convroute(sitesConvroutes.replace)
     .convroute(sitesConvroutes.remove)
     //  Aggregated readings
-    .convroute(aggregatedReadingsConvroutes.insert);
+    .convroute(aggregatedReadingsConvroutes.insert)
+    //  Favorite charts
+    .convroute(favChartsConvroutes.insert);
