@@ -14,7 +14,7 @@ export default {
         "owner": {
             "type": "string"
         },
-        "config": {
+        "state": {
             "type": "object"
         }
     },
@@ -22,7 +22,7 @@ export default {
     "required": [
         "id",
         "type",
-        "config",
+        "state",
         "owner"
     ]
 };
