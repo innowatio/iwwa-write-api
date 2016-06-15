@@ -51,6 +51,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "bcryptjs": "^2.3.0",
     "bluebird": "^3.4.0",
+    "body-parser": "^1.15.1",
     "bunyan": "^1.8.1",
     "bunyan-cloudwatch": "^2.0.0",
     "bunyan-request": "^1.2.0",
