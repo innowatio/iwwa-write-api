@@ -73,6 +73,13 @@ export default {
                 "type": "string"
             }
         },
+        "primaryTags": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "string"
+            }
+        },
         "siteId": {
             "type": "string"
         },
