@@ -6,6 +6,7 @@ import sensorsConvroutes from "api/sensors";
 import sitesConvroutes from "api/sites";
 import aggregatedReadingsConvroutes from "api/aggregated-readings";
 import favChartsConvroutes from "api/favorite-charts";
+import meterReport from "api/meter-report";
 
 const options = {
     info: {
@@ -34,4 +35,6 @@ export default convexpress(options)
     //  Aggregated readings
     .convroute(aggregatedReadingsConvroutes.insert)
     //  Favorite charts
-    .convroute(favChartsConvroutes.insert);
+    .convroute(favChartsConvroutes.insert)
+    //  Meter reports
+    .convroute(meterReport.insert);
