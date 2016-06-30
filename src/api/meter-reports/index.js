@@ -5,7 +5,7 @@ import * as authorize from "./authorize";
 import schema from "./schema";
 
 export default collection({
-    name: "meter-report",
+    name: "meter-reports",
     dispatchEvent,
     authorize,
     schema
