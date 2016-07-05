@@ -6,13 +6,13 @@ export async function insert (user, body) {
     };
 }
 
-export async function replace () {
+export function replace () {
     return {
         authorized: true
     };
 }
 
-export async function remove () {
+export function remove () {
     return {
         authorized: true
     };
