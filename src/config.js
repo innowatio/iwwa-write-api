@@ -30,3 +30,4 @@ export const JWT_ISSUER = "iwwa-write-api";
 // ACTIONS
 
 export const ACTION_INSERT_READING = "element inserted in collection readings";
+export const ACTION_INSERT_INTERACTION = "element inserted in collection user-interactions";
