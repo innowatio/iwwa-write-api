@@ -7,6 +7,7 @@ import sitesConvroutes from "api/sites";
 import aggregatedReadingsConvroutes from "api/aggregated-readings";
 import favChartsConvroutes from "api/favorite-charts";
 import meterReports from "api/meter-reports";
+import answersConvroutes from "api/answers";
 
 const options = {
     info: {
@@ -37,4 +38,6 @@ export default convexpress(options)
     //  Favorite charts
     .convroute(favChartsConvroutes.insert)
     //  Meter reports
-    .convroute(meterReports.insert);
+    .convroute(meterReports.insert)
+    // Answers
+    .convroute(answersConvroutes.insert);
