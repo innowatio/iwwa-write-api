@@ -15,6 +15,7 @@ export default {
                     "type": "string"
                 }
             },
+            "additionalProperties": false,
             "required": [
                 "id",
                 "timestamp",
@@ -31,6 +32,7 @@ export default {
                     "type": "string"
                 }
             },
+            "additionalProperties": false,
             "required": [
                 "id",
                 "text"
