@@ -1,16 +1,16 @@
 import collection from "lk-collection-convexpress";
 
-import splitEvents from "./split-events";
 import * as authorize from "./authorize";
 import schema from "./schema";
+import splitEvents from "./split-events";
 
 export default collection({
     name: "user-interactions",
-    customDispatcher,
+    dispatchEvent,
     authorize,
     schema
 });
 
-async function customDispatcher () {
+async function dispatchEvent () {
     await splitEvents(arguments[1]);
 }
