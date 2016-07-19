@@ -13,7 +13,7 @@ export default {
                 },
                 "type": {
                     "type": "string",
-                    "enum": [""]
+                    "enum": ["page_view"]
                 },
             },
             "required": ["body", "timestamp", "type"]
