@@ -1,6 +1,6 @@
 import collection from "lk-collection-convexpress";
 
-import splitEvents from "split-events";
+import splitEvents from "./split-events";
 import * as authorize from "./authorize";
 import schema from "./schema";
 

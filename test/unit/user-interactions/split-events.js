@@ -48,6 +48,7 @@ describe("convert", () => {
         expect(readings).to.deep.equal([
             {
                 element: {
+                    id: "id",
                     userId: "thisUserId",
                     timestamp: "2016-01-01T00:01:00.000Z",
                     type: "interaction1",
@@ -59,6 +60,7 @@ describe("convert", () => {
             },
             {
                 element: {
+                    id: "id",
                     userId: "thisUserId",
                     timestamp: "2016-01-01T00:02:00.000Z",
                     type: "interaction2",
