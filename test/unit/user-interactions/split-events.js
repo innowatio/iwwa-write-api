@@ -25,6 +25,10 @@ describe("convert", () => {
 
         const body = {
             userId: "thisUserId",
+            details: {
+                appVersion: "1.0.0",
+                deviceInfo: "deviceInfo"
+            },
             interactions: [
                 {
                     type: "interaction1",
@@ -50,6 +54,10 @@ describe("convert", () => {
                 element: {
                     id: "id",
                     userId: "thisUserId",
+                    details: {
+                        appVersion: "1.0.0",
+                        deviceInfo: "deviceInfo"
+                    },
                     timestamp: "2016-01-01T00:01:00.000Z",
                     type: "interaction1",
                     body: {
@@ -62,6 +70,10 @@ describe("convert", () => {
                 element: {
                     id: "id",
                     userId: "thisUserId",
+                    details: {
+                        appVersion: "1.0.0",
+                        deviceInfo: "deviceInfo"
+                    },
                     timestamp: "2016-01-01T00:02:00.000Z",
                     type: "interaction2",
                     body: {
