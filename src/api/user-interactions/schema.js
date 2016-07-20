@@ -14,7 +14,7 @@ export default {
                 "type": {
                     "type": "string",
                     "enum": ["page_view"]
-                },
+                }
             },
             "required": ["body", "timestamp", "type"]
         }
@@ -29,6 +29,9 @@ export default {
             "items": {
                 "$ref": "#/definitions/interaction"
             }
+        },
+        "details": {
+            "type": "object"
         }
     },
     "additionalProperties": false,
