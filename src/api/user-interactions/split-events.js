@@ -5,12 +5,13 @@ import {ACTION_INSERT_INTERACTION} from "config";
 import dispatchEvent from "services/dispatcher";
 
 function convert (body) {
-    return body.interactions.map(interation => {
+    return body.interactions.map(interaction => {
         return {
             element: {
                 id: v4(),
                 userId: body.userId,
-                ...interation
+                details: body.details,
+                ...interaction
             }
         };
     });
