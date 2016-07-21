@@ -7,8 +7,8 @@ import dispatchEvent from "services/dispatcher";
 function convert (body) {
     return body.interactions.map(interaction => {
         return {
+            id: v4(),
             element: {
-                id: v4(),
                 userId: body.userId,
                 details: body.details,
                 ...interaction
