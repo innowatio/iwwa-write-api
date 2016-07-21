@@ -51,8 +51,8 @@ describe("convert", () => {
         const readings = convert(body);
         expect(readings).to.deep.equal([
             {
+                id: "id",
                 element: {
-                    id: "id",
                     userId: "thisUserId",
                     details: {
                         appVersion: "1.0.0",
@@ -67,8 +67,8 @@ describe("convert", () => {
                 }
             },
             {
+                id: "id",
                 element: {
-                    id: "id",
                     userId: "thisUserId",
                     details: {
                         appVersion: "1.0.0",
