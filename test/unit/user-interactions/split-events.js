@@ -24,6 +24,7 @@ describe("convert", () => {
     it("returns the disgregated array of readings", () => {
 
         const body = {
+            visitId: "thisUserId-2016-01-01T00:01:00.000Z",
             userId: "thisUserId",
             details: {
                 appVersion: "1.0.0",
@@ -53,6 +54,7 @@ describe("convert", () => {
             {
                 id: "id",
                 element: {
+                    visitId: "thisUserId-2016-01-01T00:01:00.000Z",
                     userId: "thisUserId",
                     details: {
                         appVersion: "1.0.0",
@@ -69,6 +71,7 @@ describe("convert", () => {
             {
                 id: "id",
                 element: {
+                    visitId: "thisUserId-2016-01-01T00:01:00.000Z",
                     userId: "thisUserId",
                     details: {
                         appVersion: "1.0.0",

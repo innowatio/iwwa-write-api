@@ -9,6 +9,7 @@ function convert (body) {
         return {
             id: v4(),
             element: {
+                visitId: body.visitId,
                 userId: body.userId,
                 details: body.details,
                 ...interaction

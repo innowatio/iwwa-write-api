@@ -24,6 +24,9 @@ export default {
         "userId": {
             "type": "string"
         },
+        "visitId": {
+            "type": "string"
+        },
         "interactions": {
             "type": "array",
             "items": {
@@ -37,6 +40,7 @@ export default {
     "additionalProperties": false,
     "required": [
         "userId",
+        "visitId",
         "interactions"
     ]
 };
