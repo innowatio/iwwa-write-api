@@ -55,6 +55,9 @@ export default {
         "siteId": {
             "type": "string"
         },
+        "visitId": {
+            "type": "string"
+        },
         "answers": {
             "type": "array",
             "items": {
