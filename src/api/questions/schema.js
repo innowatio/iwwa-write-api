@@ -10,6 +10,12 @@ export default {
             "type": "string",
             "enum": ["demographics", "building", "heating", "cooling", "behavioral", "pilot"]
         },
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
         "start": {
             "type": "string",
             "format": "date-time"
