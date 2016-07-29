@@ -10,6 +10,9 @@ export default {
             "type": "string",
             "enum": ["demographics", "building", "heating", "cooling", "behavioral", "pilot"]
         },
+        "categoryNumber": {
+            "type": "string"
+        },
         "title": {
             "type": "string"
         },
