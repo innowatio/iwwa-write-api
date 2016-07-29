@@ -8,7 +8,15 @@ export default {
         },
         "category": {
             "type": "string",
-            "enum": ["demographics", "building", "heating", "cooling", "behavioral", "initialPilot", "endingPilot"]
+            "enum": ["demographics", "building", "heating", "cooling", "behavioral", "pilot"]
+        },
+        "start": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "end": {
+            "type": "string",
+            "format": "date-time"
         },
         "questions": {
             "type": "array",
