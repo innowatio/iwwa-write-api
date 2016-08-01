@@ -12,7 +12,10 @@ export default {
                     "format": "date-time"
                 },
                 "answer": {
-                    "type": "string"
+                    "oneOf": [
+                        {"type": "string"},
+                        {"type": "number"}
+                    ]
                 }
             },
             "additionalProperties": false,

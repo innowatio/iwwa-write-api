@@ -1,5 +1,40 @@
 export default {
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "question": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": "string"
+                },
+                "options": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {"type": "string"},
+                            {"type": "number"}
+                        ]
+                    },
+                    "uniqueItems": true
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "text",
+                "type"
+            ]
+        }
+    },
     "type": "object",
     "properties": {
         "type": {
@@ -8,10 +43,10 @@ export default {
         },
         "category": {
             "type": "string",
-            "enum": ["demographics", "building", "heating", "cooling", "behavioral", "pilot"]
+            "enum": ["demographics", "building", "heating", "cooling", "behavioural", "pilot"]
         },
         "categoryNumber": {
-            "type": "string"
+            "type": "number"
         },
         "title": {
             "type": "string"
@@ -30,31 +65,7 @@ export default {
         "questions": {
             "type": "array",
             "items": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "number"
-                    },
-                    "text": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "string"
-                    },
-                    "options": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "uniqueItems": true
-                    }
-                },
-                "additionalProperties": false,
-                "required": [
-                    "id",
-                    "text",
-                    "type"
-                ]
+                "$ref": "#/definitions/question"
             }
         }
     },
