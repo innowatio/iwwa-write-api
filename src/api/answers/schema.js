@@ -41,13 +41,16 @@ export default {
     },
     "type": "object",
     "properties": {
+        "questionId": {
+            "type": "string"
+        },
         "type": {
             "type": "string",
             "enum": ["survey", "questionnaire"]
         },
         "category": {
             "type": "string",
-            "enum": ["demographics", "building", "heating", "cooling", "behavioral", "initialPilot", "endingPilot"]
+            "enum": ["demographics", "building", "heating", "cooling", "behavioral", "pilot"]
         },
         "userId": {
             "type": "string"
@@ -73,6 +76,7 @@ export default {
     },
     "additionalProperties": false,
     "required": [
+        "questionId",
         "type",
         "category",
         "userId",
