@@ -16,29 +16,29 @@ export default {
                         {"type": "string"},
                         {"type": "number"}
                     ]
+                },
+                "question": {
+                    "type": "object",
+                    "properties": {
+                        "text": {
+                            "type": "string"
+                        },
+                        "category": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "text"
+                    ]
                 }
             },
             "additionalProperties": false,
             "required": [
                 "id",
                 "timestamp",
-                "answer"
-            ]
-        },
-        "question": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "number"
-                },
-                "text": {
-                    "type": "string"
-                }
-            },
-            "additionalProperties": false,
-            "required": [
-                "id",
-                "text"
+                "answer",
+                "question"
             ]
         }
     },
@@ -69,12 +69,6 @@ export default {
             "items": {
                 "$ref": "#/definitions/answer"
             }
-        },
-        "questions": {
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/question"
-            }
         }
     },
     "additionalProperties": false,
@@ -83,7 +77,6 @@ export default {
         "type",
         "category",
         "userId",
-        "answers",
-        "questions"
+        "answers"
     ]
 };
