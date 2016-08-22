@@ -41,14 +41,11 @@ export default convexpress(options)
     .convroute(favChartsConvroutes.insert)
     //  Meter reports
     .convroute(meterReports.insert)
-<<<<<<< HEAD
     //  User interactions
-    .convroute(userInteractions.insert);
-=======
+    .convroute(userInteractions.insert)
     // Answers
     .convroute(answersConvroutes.insert)
     // Questions
     .convroute(questionsConvroutes.insert)
     .convroute(questionsConvroutes.replace)
     .convroute(questionsConvroutes.remove);
->>>>>>> answers
