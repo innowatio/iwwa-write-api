@@ -8,6 +8,8 @@ import aggregatedReadingsConvroutes from "api/aggregated-readings";
 import favChartsConvroutes from "api/favorite-charts";
 import meterReports from "api/meter-reports";
 import userInteractions from "api/user-interactions";
+import answersConvroutes from "api/answers";
+import questionsConvroutes from "api/questions";
 
 const options = {
     info: {
@@ -39,5 +41,14 @@ export default convexpress(options)
     .convroute(favChartsConvroutes.insert)
     //  Meter reports
     .convroute(meterReports.insert)
+<<<<<<< HEAD
     //  User interactions
     .convroute(userInteractions.insert);
+=======
+    // Answers
+    .convroute(answersConvroutes.insert)
+    // Questions
+    .convroute(questionsConvroutes.insert)
+    .convroute(questionsConvroutes.replace)
+    .convroute(questionsConvroutes.remove);
+>>>>>>> answers

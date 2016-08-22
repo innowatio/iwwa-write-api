@@ -2,10 +2,10 @@ import {flatten, isNil} from "ramda";
 
 import mongodb from "services/mongodb";
 
-export async function findSensorsOnDB (sensorsIds) {
+export const findSensorsOnDB = async function findSensorsOnDB (sensorsIds) {
     const db = await mongodb;
     return db.collection("sensors").find({"_id": {$in: sensorsIds}}, {"_id": 1}).toArray();
-}
+};
 
 export function getSensorsIds (children) {
     const ids = findIds(children);
