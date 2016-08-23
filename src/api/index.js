@@ -10,6 +10,7 @@ import meterReports from "api/meter-reports";
 import userInteractions from "api/user-interactions";
 import answersConvroutes from "api/answers";
 import questionsConvroutes from "api/questions";
+import readingsConvroutes from "api/readings";
 
 const options = {
     info: {
@@ -48,4 +49,6 @@ export default convexpress(options)
     // Questions
     .convroute(questionsConvroutes.insert)
     .convroute(questionsConvroutes.replace)
-    .convroute(questionsConvroutes.remove);
+    .convroute(questionsConvroutes.remove)
+    // Readings
+    .convroute(readingsConvroutes.insert);
