@@ -23,13 +23,22 @@ export default {
         "id": {
             "type": "string"
         },
-        "name": {
+        "employees": {
+            "type": "number"
+        },
+        "businessType": {
             "type": "string"
         },
-        "description": {
+        "areaInMq": {
+            "type": "number"
+        },
+        "country": {
             "type": "string"
         },
-        "shortDescription": {
+        "province": {
+            "type": "string"
+        },
+        "address": {
             "type": "string"
         },
         "sensors": {
@@ -38,7 +47,6 @@ export default {
     },
     "additionalProperties": false,
     "required": [
-        "id",
-        "name"
+        "id"
     ]
 };
