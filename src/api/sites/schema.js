@@ -23,6 +23,15 @@ export default {
         "id": {
             "type": "string"
         },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "shortDescription": {
+            "type": "string"
+        },
         "employees": {
             "type": "number"
         },
@@ -41,12 +50,16 @@ export default {
         "address": {
             "type": "string"
         },
+        "city": {
+            "type": "string"
+        },
         "sensors": {
             "$ref": "#/definitions/children"
         }
     },
     "additionalProperties": false,
     "required": [
-        "id"
+        "id",
+        "name"
     ]
 };
