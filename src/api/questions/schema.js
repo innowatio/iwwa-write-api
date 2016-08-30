@@ -14,7 +14,8 @@ export default {
                     "type": "string"
                 },
                 "category": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": ["singleChoice", "rate"]
                 },
                 "options": {
                     "type": "array",
