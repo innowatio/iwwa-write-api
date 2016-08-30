@@ -4,7 +4,7 @@ export default {
     "properties": {
         "type": {
             "type": "string",
-            "enum": ["alarm", "notification", "tip"]
+            "enum": ["alarm", "notification", "tip", "default"]
         },
         "title": {
             "type": "string"
@@ -12,24 +12,33 @@ export default {
         "message": {
             "type": "string"
         },
-        "application": {
+        "data": {
+            "type": "object"
+        },
+        "applications": {
             "type": "array",
             "items": {
                 "type": "string",
                 "enum": ["com.innowatio.iwapp", "com.innowatio.energycoach"]
             }
         },
-        "userId": {
+        "usersId": {
             "type": "array",
             "uniqueItems": true,
             "items": {
                 "type": "string"
             }
+        },
+        "topic": {
+            "type": "string",
+            "enum": ["iwapp-users"]
         }
     },
     "additionalProperties": false,
     "required": [
         "title",
-        "message"
+        "message",
+        "type",
+        "applications"
     ]
 };
