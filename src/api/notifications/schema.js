@@ -15,23 +15,12 @@ export default {
         "data": {
             "type": "object"
         },
-        "applications": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": ["com.innowatio.iwapp", "com.innowatio.energycoach"]
-            }
-        },
         "usersId": {
             "type": "array",
             "uniqueItems": true,
             "items": {
                 "type": "string"
             }
-        },
-        "topic": {
-            "type": "string",
-            "enum": ["iwapp-users"]
         }
     },
     "additionalProperties": false,
@@ -39,6 +28,6 @@ export default {
         "title",
         "message",
         "type",
-        "applications"
+        "usersId"
     ]
 };
