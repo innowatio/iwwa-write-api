@@ -8,6 +8,7 @@ import aggregatedReadingsConvroutes from "api/aggregated-readings";
 import favChartsConvroutes from "api/favorite-charts";
 import meterReports from "api/meter-reports";
 import notifications from "api/notifications";
+import notificationReaded from "api/notifications";
 
 const options = {
     info: {
@@ -18,26 +19,28 @@ const options = {
 };
 export default convexpress(options)
     .serveSwagger()
-    //  Users
+    // Users
     .convroute(usersConvroutes.login)
     .convroute(usersConvroutes.createUser)
     .convroute(usersConvroutes.removeUser)
     .convroute(usersConvroutes.addRole)
     .convroute(usersConvroutes.removeRole)
     .convroute(usersConvroutes.replaceProfile)
-    //  Sensors
+    // Sensors
     .convroute(sensorsConvroutes.insert)
     .convroute(sensorsConvroutes.replace)
     .convroute(sensorsConvroutes.remove)
-    //  Sites
+    // Sites
     .convroute(sitesConvroutes.insert)
     .convroute(sitesConvroutes.replace)
     .convroute(sitesConvroutes.remove)
-    //  Aggregated readings
+    // Aggregated readings
     .convroute(aggregatedReadingsConvroutes.insert)
-    //  Favorite charts
+    // Favorite charts
     .convroute(favChartsConvroutes.insert)
-    //  Meter reports
+    // Meter reports
     .convroute(meterReports.insert)
     // Notifications
-    .convroute(notifications.insert);
+    .convroute(notifications.insert)
+    // Notifications readed
+    .convroute(notificationReaded.insert);
