@@ -32,6 +32,27 @@ export default {
         "shortDescription": {
             "type": "string"
         },
+        "employees": {
+            "type": "number"
+        },
+        "businessType": {
+            "type": "string"
+        },
+        "areaInMq": {
+            "type": "number"
+        },
+        "country": {
+            "type": "string"
+        },
+        "province": {
+            "type": "string"
+        },
+        "address": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string"
+        },
         "sensors": {
             "$ref": "#/definitions/children"
         }

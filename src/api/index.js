@@ -7,8 +7,12 @@ import sitesConvroutes from "api/sites";
 import aggregatedReadingsConvroutes from "api/aggregated-readings";
 import favChartsConvroutes from "api/favorite-charts";
 import meterReports from "api/meter-reports";
-import notifications from "api/notifications";
-import notificationReaded from "api/notifications";
+import notificationsConvroutes from "api/notifications";
+import notificationReadedConvroutes from "api/notifications";
+import userInteractions from "api/user-interactions";
+import answersConvroutes from "api/answers";
+import questionsConvroutes from "api/questions";
+import readingsConvroutes from "api/readings";
 
 const options = {
     info: {
@@ -38,9 +42,19 @@ export default convexpress(options)
     .convroute(aggregatedReadingsConvroutes.insert)
     // Favorite charts
     .convroute(favChartsConvroutes.insert)
-    // Meter reports
-    .convroute(meterReports.insert)
     // Notifications
-    .convroute(notifications.insert)
+    .convroute(notificationsConvroutes.insert)
     // Notifications readed
-    .convroute(notificationReaded.insert);
+    .convroute(notificationReadedConvroutes.insert)
+    //  Meter reports
+    .convroute(meterReports.insert)
+    //  User interactions
+    .convroute(userInteractions.insert)
+    // Answers
+    .convroute(answersConvroutes.insert)
+    // Questions
+    .convroute(questionsConvroutes.insert)
+    .convroute(questionsConvroutes.replace)
+    .convroute(questionsConvroutes.remove)
+    // Readings
+    .convroute(readingsConvroutes.insert);
