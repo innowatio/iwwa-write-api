@@ -2,7 +2,7 @@ export default {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
-        "id": {
+        "notificationsIds": {
             "type": "array",
             "uniqueItems": true,
             "items": {
@@ -12,6 +12,6 @@ export default {
     },
     "additionalProperties": false,
     "required": [
-        "id"
+        "notificationsIds"
     ]
 };
