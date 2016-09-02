@@ -8,7 +8,7 @@ import aggregatedReadingsConvroutes from "api/aggregated-readings";
 import favChartsConvroutes from "api/favorite-charts";
 import meterReports from "api/meter-reports";
 import notificationsConvroutes from "api/notifications";
-import notificationReadedConvroutes from "api/notifications";
+import notificationsReadedConvroutes from "api/notifications-readed";
 import userInteractions from "api/user-interactions";
 import answersConvroutes from "api/answers";
 import questionsConvroutes from "api/questions";
@@ -45,7 +45,7 @@ export default convexpress(options)
     // Notifications
     .convroute(notificationsConvroutes.insert)
     // Notifications readed
-    .convroute(notificationReadedConvroutes.insert)
+    .convroute(notificationsReadedConvroutes.insert)
     //  Meter reports
     .convroute(meterReports.insert)
     //  User interactions
