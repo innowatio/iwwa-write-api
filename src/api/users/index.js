@@ -1,17 +1,13 @@
-import {getConvroutes, getAuthenticateMiddleware} from "lk-users-convexpress";
+import collection from "lk-collection-convexpress";
 
-import * as config from "config";
 import dispatchEvent from "services/dispatcher";
-import {findUserByEmail, findUserById, getUserId} from "./utils";
+import * as authorize from "./authorize";
+import schema from "./schema";
 
-const usersOptions = {
-    jwtSecret: config.JWT_SECRET,
-    jwtIssuer: config.JWT_ISSUER,
+export default collection({
+    name: "users",
     dispatchEvent,
-    findUserByEmail,
-    findUserById,
-    getUserId,
-    allowSignup: false
-};
-export const usersConvroutes = getConvroutes(usersOptions);
-export const authenticateMiddleware = getAuthenticateMiddleware(usersOptions);
+    authorize,
+    schema
+});
+

@@ -1,7 +1,7 @@
 import convexpress from "convexpress";
 
 import * as config from "config";
-import {usersConvroutes} from "api/users";
+import usersConvroutes from "api/users";
 import sensorsConvroutes from "api/sensors";
 import sitesConvroutes from "api/sites";
 import aggregatedReadingsConvroutes from "api/aggregated-readings";
@@ -22,12 +22,7 @@ const options = {
 export default convexpress(options)
     .serveSwagger()
     //  Users
-    .convroute(usersConvroutes.login)
-    .convroute(usersConvroutes.createUser)
-    .convroute(usersConvroutes.removeUser)
-    .convroute(usersConvroutes.addRole)
-    .convroute(usersConvroutes.removeRole)
-    .convroute(usersConvroutes.replaceProfile)
+    .convroute(usersConvroutes.insert)
     //  Sensors
     .convroute(sensorsConvroutes.insert)
     .convroute(sensorsConvroutes.replace)
