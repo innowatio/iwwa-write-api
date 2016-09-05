@@ -7,6 +7,8 @@ import sitesConvroutes from "api/sites";
 import aggregatedReadingsConvroutes from "api/aggregated-readings";
 import favChartsConvroutes from "api/favorite-charts";
 import meterReports from "api/meter-reports";
+import notificationsConvroutes from "api/notifications";
+import notificationsReadedConvroutes from "api/notifications-readed";
 import userInteractions from "api/user-interactions";
 import answersConvroutes from "api/answers";
 import questionsConvroutes from "api/questions";
@@ -27,14 +29,18 @@ export default convexpress(options)
     .convroute(sensorsConvroutes.insert)
     .convroute(sensorsConvroutes.replace)
     .convroute(sensorsConvroutes.remove)
-    //  Sites
+    // Sites
     .convroute(sitesConvroutes.insert)
     .convroute(sitesConvroutes.replace)
     .convroute(sitesConvroutes.remove)
-    //  Aggregated readings
+    // Aggregated readings
     .convroute(aggregatedReadingsConvroutes.insert)
-    //  Favorite charts
+    // Favorite charts
     .convroute(favChartsConvroutes.insert)
+    // Notifications
+    .convroute(notificationsConvroutes.insert)
+    // Notifications readed
+    .convroute(notificationsReadedConvroutes.insert)
     //  Meter reports
     .convroute(meterReports.insert)
     //  User interactions
