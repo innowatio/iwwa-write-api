@@ -13,6 +13,7 @@ import userInteractions from "api/user-interactions";
 import answersConvroutes from "api/answers";
 import questionsConvroutes from "api/questions";
 import readingsConvroutes from "api/readings";
+import emails from "api/emails";
 
 const options = {
     info: {
@@ -52,4 +53,6 @@ export default convexpress(options)
     .convroute(questionsConvroutes.replace)
     .convroute(questionsConvroutes.remove)
     // Readings
-    .convroute(readingsConvroutes.insert);
+    .convroute(readingsConvroutes.insert)
+    // Emails
+    .convroute(emails.insert);
