@@ -7,7 +7,10 @@ export default {
             "format": "date-time"
         },
         "toAddresses": {
-            "type": "string"
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         },
         "message": {
             "type": "string"
