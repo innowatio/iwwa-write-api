@@ -42,7 +42,8 @@ export default {
             "type": "string"
         },
         "type": {
-            "type": "string"
+            "type": "string",
+            "enum": ["co2", "db", "pod", "pod-anz", "scada", "site", "thl"]
         },
         "description": {
             "type": "string"
