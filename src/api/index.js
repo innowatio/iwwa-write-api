@@ -26,6 +26,7 @@ export default convexpress(options)
     .serveSwagger()
     //  Users
     .convroute(usersConvroutes.insert)
+    .convroute(usersConvroutes.replace)
     //  Sensors
     .convroute(sensorsConvroutes.insert)
     .convroute(sensorsConvroutes.replace)
