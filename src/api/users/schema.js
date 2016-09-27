@@ -20,6 +20,30 @@ export default {
             },
             "minItems": 1,
             "uniqueItems": true
+        },
+        "groups": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true
+        },
+        "profile":{
+            "type": "object",
+            "properties": {
+                "active": {
+                    "type": "boolean"
+                },
+                "confirmed": {
+                    "type": "boolean"
+                },
+                "isDeleted": {
+                    "type": "boolean"
+                },
+                "parentUserId": {
+                    "type": "string"
+                }
+            }
         }
     },
     "additionalProperties": false,
