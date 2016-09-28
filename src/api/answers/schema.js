@@ -53,7 +53,7 @@ export default {
         },
         "category": {
             "type": "string",
-            "enum": ["demographics", "building", "heating", "cooling", "behavioral", "pilot"]
+            "enum": ["demographics", "building", "heating", "cooling", "behavioural", "pilot"]
         },
         "userId": {
             "type": "string"
