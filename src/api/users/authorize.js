@@ -6,7 +6,7 @@ export function insert () {
 
 export function replace () {
     return {
-        authorized: false
+        authorized: true
     };
 }
 
