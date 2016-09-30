@@ -13,7 +13,8 @@ import userInteractions from "api/user-interactions";
 import answersConvroutes from "api/answers";
 import questionsConvroutes from "api/questions";
 import readingsConvroutes from "api/readings";
-import emails from "api/emails";
+import emailsConvroutes from "api/emails";
+import groupsConvroutes from "api/groups";
 
 const options = {
     info: {
@@ -22,6 +23,7 @@ const options = {
     },
     host: config.HOST
 };
+
 export default convexpress(options)
     .serveSwagger()
     //  Users
@@ -56,4 +58,8 @@ export default convexpress(options)
     // Readings
     .convroute(readingsConvroutes.insert)
     // Emails
-    .convroute(emails.insert);
+    .convroute(emailsConvroutes.insert)
+    // Groups
+    .convroute(groupsConvroutes.insert)
+    .convroute(groupsConvroutes.replace)
+    .convroute(groupsConvroutes.remove);
