@@ -13,6 +13,13 @@ export default {
             "minItems": 1,
             "uniqueItems": true
         },
+        "sensors": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true
+        },
         "roles": {
             "type": "array",
             "items": {
