@@ -15,6 +15,7 @@ import questionsConvroutes from "api/questions";
 import readingsConvroutes from "api/readings";
 import emailsConvroutes from "api/emails";
 import groupsConvroutes from "api/groups";
+import alarmsConvroutes from "api/alarms";
 
 const options = {
     info: {
@@ -62,4 +63,8 @@ export default convexpress(options)
     // Groups
     .convroute(groupsConvroutes.insert)
     .convroute(groupsConvroutes.replace)
-    .convroute(groupsConvroutes.remove);
+    .convroute(groupsConvroutes.remove)
+    //Alarms
+    .convroute(alarmsConvroutes.insert)
+    .convroute(alarmsConvroutes.replace)
+    .convroute(alarmsConvroutes.remove);
