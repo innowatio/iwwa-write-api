@@ -4,10 +4,10 @@ export default {
         "alarm": {
             "type": "object",
             "properties": {
-                "user_id": {
+                "userId": {
                     "type": "string"
                 },
-                "sensor_id": {
+                "sensorId": {
                     "type": "string"
                 },
                 "rule": {
@@ -17,17 +17,25 @@ export default {
                     "type": "string",
                     "enum": ["realtime", "daily", "monthly"]
                 },
+                "thresholdRule": {
+                    "type": "string"
+                },
                 "threshold": {
                     "type": "number"
+                },
+                "unitOfMeasurement": {
+                    "type": "string"
                 }
             },
             "additionalProperties": false,
             "required": [
-                "user_id",
-                "sensor_id",
+                "userId",
+                "sensorId",
                 "rule",
                 "type",
-                "threshold"
+                "threshold",
+                "thresholdRule",
+                "unitOfMeasurement"
             ]
         }
     }
