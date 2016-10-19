@@ -5,6 +5,7 @@ coverage/
 .env
 kinesis-db/
 .idea
+.nyc_output
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
