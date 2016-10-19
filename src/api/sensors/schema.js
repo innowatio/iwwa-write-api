@@ -44,14 +44,15 @@ export default {
         "type": {
             "type": "string",
             "enum": [
+                "activeEnergy",
                 "co2",
+                "custom-monitoring",
+                "maxPower",
                 "pod",
                 "pod-anz",
-                "site",
-                "thl",
-                "activeEnergy",
                 "reactiveEnergy",
-                "maxPower"
+                "site",
+                "thl"
             ]
         },
         "description": {
