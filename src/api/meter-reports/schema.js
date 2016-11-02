@@ -16,6 +16,12 @@ export default {
         "total_consumption": {
             "type": "number"
         },
+        "peer_average_daily_consumption": {
+            "type": "number"
+        },
+        "peer_average_daily_consumption_non_working": {
+            "type": "number"
+        },
         "peer_consumption": {
             "type": "number"
         },
