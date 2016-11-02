@@ -19,7 +19,24 @@ export default {
                     },
                     "type": {
                         "type": "string",
-                        "enum": ["activeEnergy", "co2", "db", "humidity", "illuminance", "maxPower", "reactiveEnergy", "scada", "temperature"]
+                        "enum": [
+                            "activeEnergy",
+                            "co2",
+                            "current",
+                            "db",
+                            "energy",
+                            "gas",
+                            "humidity",
+                            "illuminance",
+                            "maxPower",
+                            "operationLoad",
+                            "operationMode",
+                            "power",
+                            "price",
+                            "reactiveEnergy",
+                            "rh",
+                            "temperature"
+                        ]
                     },
                     "source": {
                         "type": "string",
