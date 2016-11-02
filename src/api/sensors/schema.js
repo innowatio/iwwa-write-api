@@ -41,20 +41,6 @@ export default {
         "name": {
             "type": "string"
         },
-        "type": {
-            "type": "string",
-            "enum": [
-                "activeEnergy",
-                "co2",
-                "custom-monitoring",
-                "maxPower",
-                "pod",
-                "pod-anz",
-                "reactiveEnergy",
-                "site",
-                "thl"
-            ]
-        },
         "description": {
             "type": "string"
         },
@@ -104,7 +90,6 @@ export default {
     "additionalProperties": false,
     "required": [
         "id",
-        "name",
-        "type"
+        "name"
     ]
 };
