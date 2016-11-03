@@ -33,10 +33,13 @@ export default {
             "type": "string"
         },
         "employees": {
-            "type": "number"
+            "type": "string"
         },
         "businessType": {
             "type": "string"
+        },
+        "contractualPower": {
+            "type": "number"
         },
         "areaInMq": {
             "type": "number"
