@@ -85,6 +85,9 @@ export default {
         },
         "parentSensorId": {
             "type": "string"
+        },
+        "createdByUser": {
+            "type": "boolean"
         }
     },
     "additionalProperties": false,
