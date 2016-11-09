@@ -66,6 +66,7 @@
     "bunyan-cloudwatch": "^2.0.0",
     "bunyan-request": "^1.2.0",
     "convexpress": "^1.4.2",
+    "cors": "^2.8.1",
     "express": "^4.14.0",
     "lk-collection-convexpress": "^1.0.3",
     "lk-dispatch": "^1.1.0",
