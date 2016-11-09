@@ -9,7 +9,7 @@ chai.use(sinonChai);
 
 import splitEvents from "api/aggregated-readings/split-events";
 
-describe("convert", () => {
+describe("aggregated-readings convert", () => {
 
     const convert = splitEvents.__get__("convert");
 

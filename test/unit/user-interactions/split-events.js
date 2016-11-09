@@ -8,7 +8,7 @@ chai.use(sinonChai);
 
 import splitEvents from "api/user-interactions/split-events";
 
-describe("convert", () => {
+describe("user-interactions convert", () => {
 
     const convert = splitEvents.__get__("convert");
 

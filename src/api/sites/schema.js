@@ -42,7 +42,7 @@ export default {
             "type": "number"
         },
         "areaInMq": {
-            "type": "number"
+            "type": "string"
         },
         "country": {
             "type": "string"
