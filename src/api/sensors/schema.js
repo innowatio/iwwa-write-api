@@ -31,6 +31,39 @@ export default {
                 }
             },
             "required": ["formula", "start", "end", "variables", "measurementType"]
+        },
+        "measurementInfo": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "primaryTags": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": ["type"],
+            "anyOf": [{
+                "required": ["tags"]
+            }, {
+                "required": ["primaryTags"]
+            }]
         }
     },
     "type": "object",
@@ -75,6 +108,12 @@ export default {
             "uniqueItems": true,
             "items": {
                 "type": "string"
+            }
+        },
+        "measurementsInfo": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/measurementInfo"
             }
         },
         "siteId": {
