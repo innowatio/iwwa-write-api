@@ -63,6 +63,8 @@ export default {
                 "required": ["tags"]
             }, {
                 "required": ["primaryTags"]
+            }, {
+                "required": ["description"]
             }]
         }
     },
