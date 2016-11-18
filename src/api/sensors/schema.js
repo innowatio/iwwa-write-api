@@ -65,7 +65,8 @@ export default {
                 "required": ["primaryTags"]
             }, {
                 "required": ["description"]
-            }]
+            }],
+            "additionalProperties": false
         }
     },
     "type": "object",
