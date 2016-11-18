@@ -22,25 +22,7 @@ export default {
                 "type": "object",
                 "properties": {
                     "type": {
-                        "type": "string",
-                        "enum": [
-                            "activeEnergy",
-                            "co2",
-                            "current",
-                            "db",
-                            "energy",
-                            "gas",
-                            "humidity",
-                            "illuminance",
-                            "maxPower",
-                            "operationLoad",
-                            "operationMode",
-                            "power",
-                            "price",
-                            "reactiveEnergy",
-                            "rh",
-                            "temperature"
-                        ]
+                        "type": "string"
                     },
                     "source": {
                         "type": "string",
