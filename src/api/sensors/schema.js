@@ -56,6 +56,9 @@ export default {
                 },
                 "description": {
                     "type": "string"
+                },
+                "name": {
+                    "type": "string"
                 }
             },
             "required": ["type"],
@@ -65,6 +68,8 @@ export default {
                 "required": ["primaryTags"]
             }, {
                 "required": ["description"]
+            }, {
+                "required": ["name"]
             }],
             "additionalProperties": false
         }
