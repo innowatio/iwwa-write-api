@@ -28,9 +28,14 @@ export default {
                     "items": {
                         "type": "string"
                     }
+                },
+                "sampleDeltaInMS": {
+                    "type": "integer",
+                    "minimum": 60000,
+                    "maximum": 21600000
                 }
             },
-            "required": ["formula", "start", "end", "variables", "measurementType"]
+            "required": ["formula", "start", "end", "variables", "measurementType", "sampleDeltaInMS"]
         },
         "measurementInfo": {
             "type": "object",
