@@ -135,6 +135,14 @@ export default {
         },
         "createdByUser": {
             "type": "boolean"
+        },
+        "aggregationType": {
+            "type": "string",
+            "enum": [
+                "average",
+                "lastValue",
+                "sum"
+            ]
         }
     },
     "additionalProperties": false,
