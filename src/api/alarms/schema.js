@@ -25,6 +25,9 @@ export default {
                 },
                 "unitOfMeasurement": {
                     "type": "string"
+                },
+                "measurementType": {
+                    "type": "string"
                 }
             },
             "additionalProperties": false,
@@ -35,7 +38,8 @@ export default {
                 "type",
                 "threshold",
                 "thresholdRule",
-                "unitOfMeasurement"
+                "unitOfMeasurement",
+                "measurementType"
             ]
         }
     }
