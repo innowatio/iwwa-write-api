@@ -31,6 +31,9 @@ export default {
                 },
                 "measurementType": {
                     "type": "string"
+                },
+                "email": {
+                    "type": "boolean"
                 }
             },
             "additionalProperties": false,
@@ -43,7 +46,8 @@ export default {
                 "threshold",
                 "thresholdRule",
                 "unitOfMeasurement",
-                "measurementType"
+                "measurementType",
+                "email"
             ]
         }
     }
