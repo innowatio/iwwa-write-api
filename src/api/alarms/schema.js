@@ -4,6 +4,9 @@ export default {
         "alarm": {
             "type": "object",
             "properties": {
+                "name": {
+                    "type": "string"
+                },
                 "userId": {
                     "type": "string"
                 },
@@ -32,6 +35,7 @@ export default {
             },
             "additionalProperties": false,
             "required": [
+                "name",
                 "userId",
                 "sensorId",
                 "rule",
