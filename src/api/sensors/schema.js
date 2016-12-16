@@ -64,6 +64,9 @@ export default {
                 },
                 "name": {
                     "type": "string"
+                },
+                "unitOfMeasurement": {
+                    "type": "string"
                 }
             },
             "required": ["type"],
@@ -75,6 +78,8 @@ export default {
                 "required": ["description"]
             }, {
                 "required": ["name"]
+            }, {
+                "required": ["unitOfMeasurement"]
             }],
             "additionalProperties": false
         }
