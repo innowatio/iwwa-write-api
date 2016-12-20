@@ -22,7 +22,11 @@ export default {
                     },
                     "source": {
                         "type": "string",
-                        "enum": ["forecast", "reading"]
+                        "enum": [
+                            "forecast",
+                            "reading",
+                            "reference"
+                        ]
                     },
                     "values": {
                         "type": "array",
