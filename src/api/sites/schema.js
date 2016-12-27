@@ -56,8 +56,29 @@ export default {
         "city": {
             "type": "string"
         },
+        "defaultSensor": {
+            "type": "string"
+        },
         "sensors": {
             "$ref": "#/definitions/children"
+        },
+        "alarmsDisabled": {
+            "type": "boolean"
+        },
+        "connectionDisabled": {
+            "type": "boolean"
+        },
+        "consumptionsDisabled": {
+            "type": "boolean"
+        },
+        "telecontrolDisabled": {
+            "type": "boolean"
+        },
+        "comfortDisabled": {
+            "type": "boolean"
+        },
+        "hourlyData": {
+            "type": "boolean"
         }
     },
     "additionalProperties": false,
