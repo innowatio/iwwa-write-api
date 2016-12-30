@@ -28,7 +28,14 @@ export const siteMock = {
             "id": "SENSOR2-1",
             "children": [{}]
         }]
-    }]
+    }],
+    "attributes":[
+        {
+            "id":"idAttribute",
+            "value" : "value"
+
+        }
+    ]
 };
 
 export const sensorsIds = [

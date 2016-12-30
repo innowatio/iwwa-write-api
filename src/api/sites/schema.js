@@ -16,6 +16,22 @@ export default {
                 },
                 "required": ["id"]
             }
+        },
+        "attributes": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "required": ["id"]
+            }
         }
     },
     "type": "object",
@@ -61,6 +77,9 @@ export default {
         },
         "sensors": {
             "$ref": "#/definitions/children"
+        },
+        "attributes": {
+            "$ref": "#/definitions/attributes"
         },
         "alarmsDisabled": {
             "type": "boolean"
