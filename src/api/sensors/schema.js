@@ -1,11 +1,38 @@
 export default {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {
+        "variable": {
+            "type": "object",
+            "properties": {
+                "symbol": {
+                    "type": "string"
+                },
+                "sensorId": {
+                    "type": "string"
+                },
+                "measurementType": {
+                    "type": "string"
+                },
+                "required": [
+                    "symbol",
+                    "sensorId",
+                    "measurementType"
+                ],
+                "additionalProperties": false
+            }
+        },
         "formula": {
             "type": "object",
             "properties": {
                 "formula": {
                     "type": "string"
+                },
+                "variables": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "$ref": "#/definitions/variable"
+                    }
                 },
                 "start": {
                     "type": "string",
@@ -15,27 +42,28 @@ export default {
                     "type": "string",
                     "format": "date-time"
                 },
-                "variables": {
-                    "type": "array",
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    }
-                },
                 "measurementType": {
-                    "type": "array",
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
-                "sampleDeltaInMS": {
+                "measurementUnit": {
+                    "type": "string"
+                },
+                "measurementSample": {
                     "type": "integer",
                     "minimum": 60000,
                     "maximum": 21600000
-                }
+                },
             },
-            "required": ["formula", "start", "end", "variables", "measurementType", "sampleDeltaInMS"]
+            "required": [
+                "formula",
+                "variables",
+                "start",
+                "end",
+                "measurementType",
+                "measurementUnit",
+                "measurementSample"
+            ],
+            "additionalProperties": false
         },
         "measurementInfo": {
             "type": "object",
@@ -98,13 +126,6 @@ export default {
         "shortDescription": {
             "type": "string"
         },
-        "sampleDeltaInMS": {
-            "type": "integer",
-            "minimum": 10000
-        },
-        "unitOfMeasurement": {
-            "type": "string"
-        },
         "virtual": {
             "type": "boolean"
         },
@@ -143,9 +164,6 @@ export default {
         "parentSensorId": {
             "type": "string"
         },
-        "createdByUser": {
-            "type": "boolean"
-        },
         "aggregationType": {
             "type": "string",
             "enum": [
@@ -155,9 +173,9 @@ export default {
             ]
         }
     },
-    "additionalProperties": false,
     "required": [
         "id",
         "name"
-    ]
+    ],
+    "additionalProperties": false
 };
