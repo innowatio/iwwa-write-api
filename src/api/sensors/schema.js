@@ -53,6 +53,18 @@ export default {
                     "minimum": 60000,
                     "maximum": 21600000
                 },
+                "aggregationType": {
+                    "type": "string",
+                    "enum": [
+                        "average",
+                        "difference",
+                        "max",
+                        "min",
+                        "newest",
+                        "oldest",
+                        "sum"
+                    ]
+                }
             },
             "required": [
                 "formula",
@@ -155,7 +167,10 @@ export default {
                 "$ref": "#/definitions/measurementInfo"
             }
         },
-        "siteId": {
+        "siteReference": {
+            "type": "string"
+        },
+        "userReference": {
             "type": "string"
         },
         "userId": {
@@ -163,14 +178,6 @@ export default {
         },
         "parentSensorId": {
             "type": "string"
-        },
-        "aggregationType": {
-            "type": "string",
-            "enum": [
-                "average",
-                "lastValue",
-                "sum"
-            ]
         }
     },
     "required": [
