@@ -18,20 +18,16 @@ export default {
             }
         },
         "attributes": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string"
-                    },
-                    "value": {
-                        "type": "string"
-                    }
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
                 },
-                "required": ["id"]
-            }
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": ["id"]
         }
     },
     "type": "object",
@@ -79,7 +75,10 @@ export default {
             "$ref": "#/definitions/children"
         },
         "attributes": {
-            "$ref": "#/definitions/attributes"
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/attributes"
+            }
         },
         "alarmsDisabled": {
             "type": "boolean"
