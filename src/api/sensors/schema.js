@@ -178,6 +178,21 @@ export default {
         },
         "parentSensorId": {
             "type": "string"
+        },
+        "unitOfMeasurement": {
+            "type": "string"
+        },
+        "aggregationType": {
+            "type": "string",
+            "enum": [
+                "average",
+                "difference",
+                "max",
+                "min",
+                "newest",
+                "oldest",
+                "sum"
+            ]
         }
     },
     "required": [
