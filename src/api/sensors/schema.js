@@ -12,14 +12,14 @@ export default {
                 },
                 "measurementType": {
                     "type": "string"
-                },
-                "required": [
-                    "symbol",
-                    "sensorId",
-                    "measurementType"
-                ],
-                "additionalProperties": false
-            }
+                }
+            },
+            "required": [
+                "symbol",
+                "sensorId",
+                "measurementType"
+            ],
+            "additionalProperties": false
         },
         "formula": {
             "type": "object",
