@@ -4,30 +4,40 @@ import R from "ramda";
 import {ACTION_INSERT_READING} from "config";
 import dispatchEvent from "services/dispatcher";
 
-function getMeasurementsAt (measurements, dateTime) {
+function getMeasurementsAt (measurements, dateAndSource) {
     return R.pipe(
-        R.map(m => ({
-            type: m.type,
-            source: m.source,
-            value: m.values[R.indexOf(dateTime, m.dates)],
-            unitOfMeasurement: m.unitOfMeasurement
-        })),
+        R.filter(measurement => measurement.source === dateAndSource.source),
+        R.map(measurement => {
+            return {
+                type: measurement.type,
+                value: measurement.values[R.indexOf(dateAndSource.date, measurement.dates)],
+                unitOfMeasurement: measurement.unitOfMeasurement
+            };
+        }),
         R.filter(m => !R.isNil(m.value))
     )(measurements);
 }
 function convert (body) {
     const allDates = R.uniq(
         R.flatten(
-            body.measurements.map(m => m.dates)
+            body.measurements.map(measurement => {
+                return measurement.dates.map(date => {
+                    return {
+                        date,
+                        source: measurement.source
+                    };
+                });
+            })
         )
-    ).sort();
+    ).sort((x, y) => x.date - y.date);
 
     return R.pipe(
-        R.map(dateTime => {
+        R.map(dateAndSource => {
             return {
                 sensorId: body.sensorId,
-                date: dateTime,
-                measurements: getMeasurementsAt(body.measurements, dateTime)
+                date: dateAndSource.date,
+                source: dateAndSource.source,
+                measurements: getMeasurementsAt(body.measurements, dateAndSource)
             };
         }),
         R.filter(reading => !R.isEmpty(reading.measurements)),

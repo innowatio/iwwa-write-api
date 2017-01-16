@@ -43,23 +43,77 @@ describe("aggregated-readings convert", () => {
                 },
                 {
                     type: "maxPower",
-                    source: "forecast",
+                    source: "reading",
                     values: [6, 5],
                     dates: [getOffsetDate(3), getOffsetDate(4)],
                     unitOfMeasurement: "kW"
+                },
+                {
+                    type: "reactiveEnergy",
+                    source: "forecast",
+                    values: [-2, -5],
+                    dates: [getOffsetDate(0), getOffsetDate(3)],
+                    unitOfMeasurement: "kVArh"
                 }
             ]
         };
         const readings = convert(body);
+
         expect(readings).to.deep.equal([
             {
                 element: {
                     sensorId: "sensorId",
                     date: "2015-01-01T00:00:00.000Z",
+                    source: "forecast",
                     measurements: [{
                         type: "activeEnergy",
-                        source: "forecast",
                         value: 1,
+                        unitOfMeasurement: "kWh"
+                    }, {
+                        type: "reactiveEnergy",
+                        value: -2,
+                        unitOfMeasurement: "kVArh"
+                    }]
+                }
+            },
+            {
+                element: {
+                    sensorId: "sensorId",
+                    date: "2015-01-01T00:15:00.000Z",
+                    source: "forecast",
+                    measurements: [{
+                        type: "activeEnergy",
+                        value: 5,
+                        unitOfMeasurement: "kWh"
+                    }, {
+                        type: "reactiveEnergy",
+                        value: -5,
+                        unitOfMeasurement: "kVArh"
+                    }]
+                }
+            },
+            {
+                element: {
+                    sensorId: "sensorId",
+                    date: "2015-01-01T00:25:00.000Z",
+                    source: "forecast",
+                    measurements: [
+                        {
+                            type: "activeEnergy",
+                            value: 8,
+                            unitOfMeasurement: "kWh"
+                        }
+                    ]
+                }
+            },
+            {
+                element: {
+                    sensorId: "sensorId",
+                    date: "2015-01-01T00:35:00.000Z",
+                    source: "forecast",
+                    measurements: [{
+                        type: "activeEnergy",
+                        value: 1000,
                         unitOfMeasurement: "kWh"
                     }]
                 }
@@ -68,30 +122,10 @@ describe("aggregated-readings convert", () => {
                 element: {
                     sensorId: "sensorId",
                     date: "2015-01-01T00:15:00.000Z",
-                    measurements: [
-                        {
-                            type: "activeEnergy",
-                            source: "forecast",
-                            value: 5,
-                            unitOfMeasurement: "kWh"
-                        },
-                        {
-                            type: "maxPower",
-                            source: "forecast",
-                            value: 6,
-                            unitOfMeasurement: "kW"
-                        }
-                    ]
-                }
-            },
-            {
-                element: {
-                    sensorId: "sensorId",
-                    date: "2015-01-01T00:20:00.000Z",
+                    source: "reading",
                     measurements: [{
                         type: "maxPower",
-                        source: "forecast",
-                        value: 5,
+                        value: 6,
                         unitOfMeasurement: "kW"
                     }]
                 }
@@ -99,24 +133,12 @@ describe("aggregated-readings convert", () => {
             {
                 element: {
                     sensorId: "sensorId",
-                    date: "2015-01-01T00:25:00.000Z",
+                    date: "2015-01-01T00:20:00.000Z",
+                    source: "reading",
                     measurements: [{
-                        type: "activeEnergy",
-                        source: "forecast",
-                        value: 8,
-                        unitOfMeasurement: "kWh"
-                    }]
-                }
-            },
-            {
-                element: {
-                    sensorId: "sensorId",
-                    date: "2015-01-01T00:35:00.000Z",
-                    measurements: [{
-                        type: "activeEnergy",
-                        source: "forecast",
-                        value: 1000,
-                        unitOfMeasurement: "kWh"
+                        type: "maxPower",
+                        value: 5,
+                        unitOfMeasurement: "kW"
                     }]
                 }
             }
