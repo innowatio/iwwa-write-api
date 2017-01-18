@@ -9,6 +9,7 @@ export const SERVER_ID = `iwwa-write-api@${hostname()}`;
 export const AWS_CLOUDWATCH_GROUP = "iwwa-write-api";
 export const AWS_CLOUDWATCH_STREAM = SERVER_ID;
 export const AWS_CLOUDWATCH_REGION = process.env.AWS_CLOUDWATCH_REGION;
+export const LOG_LEVEL = process.env.LOG_LEVEL || "info";
 
 export const MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost:27017/test";
 

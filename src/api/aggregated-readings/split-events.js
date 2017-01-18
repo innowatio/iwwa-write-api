@@ -3,6 +3,7 @@ import R from "ramda";
 
 import {ACTION_INSERT_READING} from "config";
 import dispatchEvent from "services/dispatcher";
+import log from "services/logger";
 
 function getMeasurementsAt (measurements, dateAndSource) {
     return R.pipe(
@@ -48,7 +49,12 @@ function convert (body) {
 }
 
 export default async function finalStep (body) {
-    return await map(convert(body.element), (body) => {
-        dispatchEvent(ACTION_INSERT_READING, body);
+    return await map(convert(body.element), async (body) => {
+        log.debug({
+            event: body,
+            eventType: ACTION_INSERT_READING
+        });
+
+        await dispatchEvent(ACTION_INSERT_READING, body);
     });
 }

@@ -19,7 +19,7 @@ function convert (body) {
 }
 
 export default async function (body) {
-    return await map(convert(body.element), (body) => {
-        dispatchEvent(ACTION_INSERT_INTERACTION, body);
+    return await map(convert(body.element), async (body) => {
+        await dispatchEvent(ACTION_INSERT_INTERACTION, body);
     });
 }

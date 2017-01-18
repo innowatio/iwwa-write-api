@@ -5,6 +5,7 @@ import * as config from "config";
 
 export default bunyan.createLogger({
     name: "iwwa-write-api",
+    level: config.LOG_LEVEL,
     streams: [
         {
             stream: process.stdout
