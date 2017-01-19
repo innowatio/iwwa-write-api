@@ -49,12 +49,24 @@ function convert (body) {
 }
 
 export default async function finalStep (body) {
-    return await map(convert(body.element), async (body) => {
+    const converted = convert(body.element);
+
+    let eventDispatched = 0;
+
+    const result = await map(converted, async (body) => {
         log.debug({
             event: body,
             eventType: ACTION_INSERT_READING
         });
 
+        eventDispatched++;
+
         await dispatchEvent(ACTION_INSERT_READING, body);
+    }, {concurrency: 25});
+
+    log.info({
+        eventDispatched
     });
+
+    return result;
 }

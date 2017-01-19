@@ -15,4 +15,5 @@ const kinesis = new Kinesis({
     endpoint: config.KINESIS_ENDPOINT,
     region: config.KINESIS_REGION
 });
+
 export default promisifyAll(kinesis);

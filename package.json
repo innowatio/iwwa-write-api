@@ -4,7 +4,7 @@
   "description": "Iwwa platform write API",
   "main": "lib/server.js",
   "scripts": {
-    "start-kinesis": "babel-node scripts/start-kinesis.js",
+    "start-kinesis": "NODE_PATH=src babel-node scripts/start-kinesis.js",
     "build": "babel src --out-dir lib",
     "clean": "rimraf lib coverage",
     "codecov": "NODE_ENV=test NODE_PATH=src nyc mocha report --reporter=text-lcov > coverage.lcov --recursive && codecov",
@@ -15,7 +15,8 @@
     "test": "NODE_ENV=test NODE_PATH=src mocha --compilers js:babel-register --require babel-polyfill --recursive",
     "dev:start": "NODE_PATH=src nodemon --ignore test/ --exec node_modules/.bin/babel-node src/server.js | bunyan",
     "dev:test": "npm test -- --watch",
-    "dev": "npm run dev:start & npm run dev:test"
+    "dev": "npm run dev:start & npm run dev:test",
+    "dev-kinesis": "npm run dev:start & npm run dev:test & npm run start-kinesis"
   },
   "nyc": {
     "require": [
@@ -54,6 +55,7 @@
     "supertest-as-promised": "^4.0.0"
   },
   "dependencies": {
+    "async-retry": "^0.2.1",
     "aws-sdk": "^2.5.4",
     "babel-cli": "^6.14.0",
     "babel-polyfill": "^6.13.0",
