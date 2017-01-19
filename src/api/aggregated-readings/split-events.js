@@ -51,7 +51,7 @@ function convert (body) {
 export default async function finalStep (body) {
     const converted = convert(body.element);
 
-    let eventDispatched = 0;
+    let dispatchedEvents = 0;
 
     const result = await mapSeries(converted, async (body) => {
         log.debug({
@@ -59,13 +59,13 @@ export default async function finalStep (body) {
             eventType: ACTION_INSERT_READING
         });
 
-        eventDispatched++;
+        dispatchedEvents++;
 
         await dispatchEvent(ACTION_INSERT_READING, body);
     });
 
     log.info({
-        eventDispatched
+        dispatchedEvents
     });
 
     return result;
