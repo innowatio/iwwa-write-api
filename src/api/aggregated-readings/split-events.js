@@ -1,4 +1,4 @@
-import {map} from "bluebird";
+import {mapSeries} from "bluebird";
 import R from "ramda";
 
 import {ACTION_INSERT_READING} from "config";
@@ -53,7 +53,7 @@ export default async function finalStep (body) {
 
     let eventDispatched = 0;
 
-    const result = await map(converted, async (body) => {
+    const result = await mapSeries(converted, async (body) => {
         log.debug({
             event: body,
             eventType: ACTION_INSERT_READING
@@ -62,7 +62,7 @@ export default async function finalStep (body) {
         eventDispatched++;
 
         await dispatchEvent(ACTION_INSERT_READING, body);
-    }, {concurrency: 25});
+    });
 
     log.info({
         eventDispatched
