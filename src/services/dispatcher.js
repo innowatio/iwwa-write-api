@@ -19,11 +19,13 @@ function getInstance () {
     return dispatcherInstance;
 }
 
-export async function dispatchEvent (eventType, eventData, eventOptions, attemptCount = 0) {
+async function dispatchEvent (eventType, eventData, eventOptions, attemptCount = 0) {
 
     log.debug({
-        attemptCount,
-        eventType
+        eventType,
+        eventData,
+        eventOptions,
+        attemptCount
     });
 
     const dispatch = getInstance();

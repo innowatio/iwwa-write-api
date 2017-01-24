@@ -54,13 +54,7 @@ export default async function finalStep (body) {
     let dispatchedEvents = 0;
 
     const result = await mapSeries(converted, async (body) => {
-        log.debug({
-            event: body,
-            eventType: ACTION_INSERT_READING
-        });
-
         dispatchedEvents++;
-
         await dispatchEvent(ACTION_INSERT_READING, body);
     });
 
