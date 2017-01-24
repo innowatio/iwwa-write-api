@@ -1,6 +1,6 @@
 {
   "name": "iwwa-write-api",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Iwwa platform write API",
   "main": "lib/server.js",
   "scripts": {
