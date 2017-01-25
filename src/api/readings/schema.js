@@ -9,9 +9,6 @@ export default {
             "type": "string",
             "format": "date-time"
         },
-        "virtual": {
-            "type": "boolean"
-        },
         "source": {
             "type": "string",
             "enum": [
@@ -28,10 +25,6 @@ export default {
                     "type": {
                         "type": "string"
                     },
-                    "source": {
-                        "type": "string",
-                        "enum": ["forecast", "reading"]
-                    },
                     "value": {
                         "type": "number"
                     },
@@ -43,7 +36,8 @@ export default {
                     "type",
                     "value",
                     "unitOfMeasurement"
-                ]
+                ],
+                "additionalProperties": false
             }
         }
     },
@@ -51,5 +45,6 @@ export default {
         "sensorId",
         "date",
         "measurements"
-    ]
+    ],
+    "additionalProperties": false
 };
