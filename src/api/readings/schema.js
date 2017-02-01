@@ -37,7 +37,7 @@ export default {
                     "value",
                     "unitOfMeasurement"
                 ],
-                "additionalProperties": false
+                "additionalProperties": true
             }
         }
     },
@@ -46,5 +46,5 @@ export default {
         "date",
         "measurements"
     ],
-    "additionalProperties": false
+    "additionalProperties": true
 };
